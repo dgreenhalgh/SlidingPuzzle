@@ -11,9 +11,10 @@ public class PuzzleGridAdapter extends RecyclerView.Adapter<PuzzleGridAdapter.Vi
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mPlaceholderTextView;
 
-        public ViewHolder(View v) {
+        public ViewHolder(TextView v) {
             super(v);
-            mPlaceholderTextView = (TextView)v.findViewById(R.id.placeholder_textView);
+//            mPlaceholderTextView = (TextView)v.findViewById(R.id.placeholder_textView);
+            mPlaceholderTextView = v;
         }
     }
 
@@ -22,7 +23,7 @@ public class PuzzleGridAdapter extends RecyclerView.Adapter<PuzzleGridAdapter.Vi
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.puzzle_tile_cardview, viewGroup, false);
 
-        ViewHolder viewHolder = new ViewHolder(view);
+        ViewHolder viewHolder = new ViewHolder((TextView)view);
         return viewHolder;
     }
 
